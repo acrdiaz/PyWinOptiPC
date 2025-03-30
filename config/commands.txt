@@ -1,0 +1,33 @@
+net stop sysmain
+net stop wuauserv
+taskkill -f -im background.exe
+
+net stop wuauserv
+net stop sysmain
+#net stop WSearch
+
+taskkill -f -im microsoftedgeupdate.exe
+taskkill -f -im officeclicktorun.exe
+
+taskkill -f -im perfwatson2.exe
+
+taskkill -f -im CompatTelRunner.exe
+
+taskkill -f -im PhoneExperienceHost.exe
+#taskkill -f -im backgroundTaskHost.exe
+
+taskkill -f -im TSCUpdClt.exe
+taskkill -f -im HxTsr.exe
+
+taskkill -f -im BackgroundDownload.exe
+
+#taskkill -f -im RuntimeBroker.exe
+
+#taskkill -f -im sihost.exe
+
+taskkill -f -im gamingservices.exe
+taskkill -f -im gamingservicesnet.exe
+
+taskkill -f -im BackgroundDownload.exe
+
+taskkill -f -im MoNotificationUx.exe

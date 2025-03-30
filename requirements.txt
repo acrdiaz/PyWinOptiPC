@@ -1,0 +1,4 @@
+# Core dependencies
+psutil>=5.9.0  # For better system and process management
+pywin32>=306   # For advanced Windows service management
+colorama>=0.4.6  # For colored terminal output
