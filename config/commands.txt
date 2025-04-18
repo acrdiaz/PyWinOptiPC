@@ -31,3 +31,11 @@ taskkill -f -im gamingservicesnet.exe
 taskkill -f -im BackgroundDownload.exe
 
 taskkill -f -im MoNotificationUx.exe
+
+net stop DPS
+net stop AppXSVC
+net stop InstallService
+net stop PcaSvc
+net stop camsvc
+net stop StateRepository
+taskkill -f -im vctip.exe

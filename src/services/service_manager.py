@@ -61,7 +61,7 @@ class ServiceManager:
                 print(f"Successfully terminated {process_name}")
                 return True
             elif "not found" in result.stderr:
-                print(f"Process {process_name} =s=")
+                print(f"{process_name} =s=")
                 return True
             else:
                 print(f"Failed to terminate {process_name}: {result.stderr}")
