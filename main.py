@@ -3,7 +3,7 @@ import time
 
 def main():
     executor = CommandExecutor('config/commands.txt')
-    print("Service monitor started. Press Ctrl+C to exit.")
+    print("Service monitor started. Press Ctrl+C to exit.\n")
     
     try:
         while True:

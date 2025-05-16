@@ -70,3 +70,24 @@ class ServiceManager:
         except Exception as e:
             print(f"Error killing process {process_name}: {str(e)}")
             return False
+
+    @staticmethod
+    def delete_task(command):
+        try:
+            result = subprocess.run(
+                f'schtasks /delete /TN "{command}" /F',
+                shell=True,
+                capture_output=True,
+                text=True
+            )
+            
+            if "SUCCESS" in result.stdout:
+                print(f"Successfully deleted {command}")
+                return True
+            else:
+                print(f"{command} =s=")
+                return False
+                
+        except Exception as e:
+            print(f"Error to delete {command}: {str(e)}")
+            return False

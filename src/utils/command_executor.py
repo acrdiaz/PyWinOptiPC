@@ -35,6 +35,11 @@ class CommandExecutor:
                 elif command.startswith('taskkill -f -im'):
                     process_name = command.replace('taskkill -f -im', '').strip()
                     ServiceManager.kill_process(process_name)
+                elif command.startswith('schtasks'):
+                    process_name = command
+                    process_name = process_name.replace('schtasks /delete /TN "', '').strip()
+                    process_name = process_name.replace('" /F', '').strip()
+                    ServiceManager.delete_task(process_name)
                 else:
                     print(f"Unsupported command: {command}")
             except Exception as e:

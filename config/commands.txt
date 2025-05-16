@@ -1,3 +1,6 @@
+#schtasks /query /TN "\Microsoft\Windows\WindowsUpdate\Scheduled Start"
+schtasks /delete /TN "\Microsoft\Windows\WindowsUpdate\Scheduled Start" /F
+
 net stop sysmain
 net stop wuauserv
 taskkill -f -im background.exe
