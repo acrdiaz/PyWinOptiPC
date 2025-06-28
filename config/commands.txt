@@ -1,16 +1,32 @@
 #schtasks /query /TN "\Microsoft\Windows\WindowsUpdate\Scheduled Start"
 schtasks /delete /TN "\Microsoft\Windows\WindowsUpdate\Scheduled Start" /F
 
-net stop sysmain
-net stop wuauserv
+taskkill -f -im setup.exe
+taskkill -f -im updater.exe
+
 taskkill -f -im background.exe
 
+net stop edgeupdate
 net stop wuauserv
 net stop sysmain
 #net stop WSearch
+net stop UsoSvc
 
+taskkill -f -im TiWorker.exe
 taskkill -f -im microsoftedgeupdate.exe
 taskkill -f -im officeclicktorun.exe
+
+taskkill -f -im opera_autoupdate.exe
+taskkill -f -im mobsync.exe
+
+#taskkill -f -im postgres.exe
+#taskkill -f -im pg_ctl.exe
+#taskkill -f -im postgres.exe
+
+#net stop postgresql-x64-17
+
+#net stop vmcompute
+#net stop WslService
 
 taskkill -f -im perfwatson2.exe
 
@@ -42,3 +58,8 @@ net stop PcaSvc
 net stop camsvc
 net stop StateRepository
 taskkill -f -im vctip.exe
+
+#wsl --terminate Ubuntu-20.04
+#wsl --shutdown
+#wsl --list --verbose
+#net stop vmcompute & net stop WslService
