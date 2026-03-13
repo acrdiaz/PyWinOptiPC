@@ -1,23 +1,20 @@
 # PyWinOptiPC
 
-A Python-based Windows service and process optimizer that helps manage system services and background processes. PyWinOptiPC automatically stops specified Windows services and terminates configured processes for improved system performance and resource management.
+A Python tool that optimizes Windows by automatically stopping unwanted services and processes.
 
-## 🎯 Features
+## Features
+- Stop specified Windows services automatically
+- Terminate unwanted background processes
+- Runs continuously with 3-second checks
+- Color-coded console output
+- Handles administrator permissions safely
 
-- ⚙️ **Automatically stops specified Windows services** - Configure which services to disable
-- 🛑 **Terminates configured background processes** - Remove unnecessary processes running in the background
-- 📊 **Continuous monitoring and management** - Keep your system optimized with periodic checks
-- 🔐 **Administrator privileges handling** - Safely manages elevated permissions
-- ✅ **Graceful error handling** - Reliable error handling and service state verification
-- 🎨 **Colored terminal output** - Easy-to-read console feedback
+## Requirements
+- Windows 7/8/10/11 or Server
+- Python 3.7+
+- Administrator access
 
-## 📋 Prerequisites
-
-- **Python 3.7+**
-- **Windows Operating System** (Windows 7, 8, 10, 11, Server editions)
-- **Administrator privileges** (required to stop services and terminate processes)
-
-## 🚀 Installation
+## Installation
 
 ### 1. Clone the repository:
 ```bash
@@ -40,20 +37,6 @@ python main.py
 ### Setting Up Commands
 
 Create or edit the `config/commands.txt` file to specify which services and processes to manage:
-
-**Example `config/commands.txt`:**
-```
-# Windows Services to stop (one per line)
-# Service names should be the service's internal name, not display name
-servicename1
-servicename2
-OneDrive
-DiagTrack
-
-# Processes to terminate
-process1.exe
-process2.exe
-```
 
 ### Finding Service Names
 
@@ -107,7 +90,7 @@ Then right-click → "Run as administrator"
 Service monitor started. Press Ctrl+C to exit.
 
 Checking and stopping services...
-✓ Service 'OneDrive' stopped successfully
+✓ Service 'wuauserv' stopped successfully
 ✓ Process 'bloatware.exe' terminated
 
 Waiting 3 seconds before next check...
@@ -117,12 +100,6 @@ Waiting 3 seconds before next check...
 Program terminated by user.
 ```
 
-## 🔧 Dependencies
-
-- **psutil** (≥5.9.0) - System and process management
-- **pywin32** (≥306) - Advanced Windows service management
-- **colorama** (≥0.4.6) - Cross-platform colored terminal output
-
 ## ⚠️ Important Notes
 
 - **Administrator Privileges Required**: This application must run with elevated privileges to stop services and terminate processes
@@ -130,15 +107,7 @@ Program terminated by user.
 - **Test Before Production**: Always test your configuration on a non-critical system first
 - **Backup Configuration**: Keep a backup of your working `config/commands.txt`
 
-### Recommended Services to Disable (at your own risk)
-
-Common bloatware/telemetry services:
-- `DiagTrack` - Diagnostic Tracking Service
-- `dmwappushservice` - DmwAppPushService
-- `OneDrive` - OneDrive (if not needed)
-- `WSearch` - Windows Search (if using alternative search)
-
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### "Access Denied" Error
 - **Solution**: Run the application as Administrator
@@ -150,7 +119,7 @@ Common bloatware/telemetry services:
 ### Application Crashes on Startup
 - **Solution**: Ensure all dependencies are installed: `pip install -r requirements.txt`
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
@@ -163,16 +132,14 @@ Contributions are welcome! Feel free to:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📧 Support
+## Support
 
 For issues, questions, or suggestions, please open an [issue](https://github.com/acrdiaz/PyWinOptiPC/issues) on GitHub.
 
-## ⚖️ Disclaimer
+## Disclaimer
 
 This application interacts with Windows system services and processes. Use it responsibly and at your own risk. The author is not responsible for any system damage or data loss caused by improper use of this tool.
 
 ---
 
-**Last Updated**: 2026-03-13 01:26:32
-**Version**: 1.0.0
 **Author**: acrdiaz
